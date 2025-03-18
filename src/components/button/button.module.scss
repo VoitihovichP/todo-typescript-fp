@@ -1,11 +1,10 @@
 @use '../../styles/variables/button/button-size-variables' as sizeVariables;
-@use '../../styles/variables/button/button-color-variables' as colorVariables;
 @use '../../styles/variables/color-variables' as default;
 
 .button {
   min-height: sizeVariables.$button-default-size-height-m;
   min-width: sizeVariables.$button-default-size-width-m;
-  background-color: colorVariables.$button-default-bg;
+  background-color: default.$primary-default-color;
   border-radius: sizeVariables.$button-border-radius-m;
   color: default.$white;
   font-weight: sizeVariables.$button-fw-m;
@@ -15,9 +14,12 @@
   transition: background-color .2s ease-in-out, transform .1s ease-in-out;
 
   &:hover {
-    background-color: colorVariables.$button-hover-bg;
+    background-color: default.$primary-default-color;
   }
   &:active {
     transform: scale(0.9);
+  }
+  &:focus-visible {
+    outline: none;
   }
 }
